@@ -1,7 +1,7 @@
 ﻿// Screen Sound
 
 //Declaração de Variáveis
-string mensagemDeBoasVindas = "Boas vindas ao Screen Sound"; //Sempre começar variáveis no C# com início de letras minúsculas.
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound\n"; //Sempre começar variáveis no C# com início de letras minúsculas.
 
 //Declaração de Funções
 void ExibirMensagemDeBoasVindas() //Sempre começar funções no C# com início de Letras Maiúsculas.
@@ -60,7 +60,7 @@ void ExibirOpcoesDoMenu()
 
     switch (opcaoEscolhidaNumerica)
     {
-        case 1: Console.WriteLine("Você escolheu a opção número 1", opcaoEscolhida);
+        case 1: RegistrarBanda();
                 break;
         case 2: Console.WriteLine("Você escolheu a opção número 2", opcaoEscolhida);
                 break;
@@ -74,6 +74,24 @@ void ExibirOpcoesDoMenu()
                 break;
     }
 
+
+    // A linguagem C# é case-sensitive ela é sensível a letra maiúscula e minúscula, o mínimop de alteração, já não se é possível achar funão, variável e etc.
+
+    void RegistrarBanda()
+    {
+        Console.Clear();
+        ExibirMensagemDeBoasVindas();
+        Console.WriteLine("Registro de Bandas\n");
+        Console.Write("Registre o nome de umna banda: ");
+        string nomeDaBanda = Console.ReadLine()!;
+        Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso");
+        Thread.Sleep(5000);
+        Console.Clear();
+        ExibirMensagemDeBoasVindas();
+        ExibirOpcoesDoMenu();  
+
+
+    }
 
 
 
