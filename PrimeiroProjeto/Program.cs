@@ -2,7 +2,7 @@
 
 //Declaração de Variáveis
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound\n"; //Sempre começar variáveis no C# com início de letras minúsculas.
-
+List<string> listaDeBandas = new List<string>();  
 //Declaração de Funções
 void ExibirMensagemDeBoasVindas() //Sempre começar funções no C# com início de Letras Maiúsculas.
 {
@@ -62,7 +62,7 @@ void ExibirOpcoesDoMenu()
     {
         case 1: RegistrarBanda();
                 break;
-        case 2: Console.WriteLine("Você escolheu a opção número 2", opcaoEscolhida);
+        case 2: MostrarBandas();
                 break;
         case 3: Console.WriteLine("Você escolheu a opção número 3", opcaoEscolhida);
                 break;
@@ -77,14 +77,15 @@ void ExibirOpcoesDoMenu()
 
     // A linguagem C# é case-sensitive ela é sensível a letra maiúscula e minúscula, o mínimop de alteração, já não se é possível achar funão, variável e etc.
 
-    void RegistrarBanda()
+    /*void RegistrarBanda()
     {
         Console.Clear();
         ExibirMensagemDeBoasVindas();
         Console.WriteLine("Registro de Bandas\n");
-        Console.Write("Registre o nome de umna banda: ");
+        Console.Write("Registre o nome de uma banda: ");
         string nomeDaBanda = Console.ReadLine()!;
-        Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso");
+        listaDeBandas.Add(nomeDaBanda);
+        Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(5000);
         Console.Clear();
         ExibirMensagemDeBoasVindas();
@@ -93,11 +94,64 @@ void ExibirOpcoesDoMenu()
 
     }
 
+    void MostrarBandas()
+    {
+        Console.Clear();
+        ExibirMensagemDeBoasVindas();
+        Console.WriteLine("Exibindo a lista de bandas");
+        for (int i = 0; i < listaDeBandas.Count; i++)
+        {
+            Console.WriteLine($"Lista de Bandas: {listaDeBandas[i]}");
+        }
+        Console.WriteLine("Digite qualquer tecla para voltar ao menu principal");
+        Thread.Sleep(5000);
+        Console.ReadKey();
+        Console.Clear();
+        ExibirMensagemDeBoasVindas();
+        ExibirOpcoesDoMenu();
+    }*/
+
 
 
 
 
 };
+
+// A linguagem C# é case-sensitive ela é sensível a letra maiúscula e minúscula, o mínimop de alteração, já não se é possível achar funão, variável e etc.
+
+void RegistrarBanda()
+{
+    Console.Clear();
+    ExibirMensagemDeBoasVindas();
+    Console.WriteLine("Registro de Bandas\n");
+    Console.Write("Registre o nome de uma banda: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    listaDeBandas.Add(nomeDaBanda);
+    Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(5000);
+    Console.Clear();
+    ExibirMensagemDeBoasVindas();
+    ExibirOpcoesDoMenu();
+
+
+}
+
+void MostrarBandas()
+{
+    Console.Clear();
+    ExibirMensagemDeBoasVindas();
+    Console.WriteLine("Exibindo a lista de bandas");
+    for (int i = 0; i < listaDeBandas.Count; i++)
+    {
+        Console.WriteLine($"Lista de Bandas: {listaDeBandas[i]}");
+    }
+    Console.WriteLine("Digite qualquer tecla para voltar ao menu principal");
+    Thread.Sleep(5000);
+    Console.ReadKey();
+    Console.Clear();
+    ExibirMensagemDeBoasVindas();
+    ExibirOpcoesDoMenu();
+}
 
 ExibirMensagemDeBoasVindas();
 ExibirOpcoesDoMenu();
